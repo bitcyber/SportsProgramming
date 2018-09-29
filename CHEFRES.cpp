@@ -10,76 +10,52 @@ using namespace std ;
 // #define max INT_MAX
 
 
+
 int main()
 {
     speedup;
     int t;
     cin>>t;
     while(t--)
-    {
+    {   bool tmp[INT_MAX]={false};
         int n,m;
         cin>>n>>m;
-
         int tmp1,tmp2,tmp3;
         tmp3 =0;
-        vector<bool> check(INT_MAX,false);
-
-        vector<pair<int ,int> > arr;
         for(int i=0;i<n;i++)
         {
             cin>>tmp1>>tmp2;
 
             if(tmp3<tmp2)
                 tmp3 = tmp2;
-
             for(int j=tmp1;j<tmp2;j++)
-                check[j]=true;
-            // arr.push_back(make_pair(tmp1,tmp2));
+                tmp[j]= true;
         }
 
-        // vector<bool> check(tmp3,false);
-        // cout<<check[3]<<endl;
-        // vector<pair<int,int> >::iterator itr= arr.begin();
-
-        // for(itr=arr.begin();itr!=arr.end();++itr)
-        // for(int i=0;i<n;i++)
-        // {
-        //     for(int j=arr[i].first;j<arr[i].second;j++)
-        //         check[j]=true;
-        // }
-
-        // for(int i=0;i<tmp3;)
-
-        vector<int> mr;
-        int count=0;
-        int tmp;
-
-        for(int i=0;i<m;i++)
-            {
-                    cin>>tmp;
-                    mr.push_back(tmp);
-            }
-
-        int j = 0;
-
+        int arr[m];
+        int count =0;
         for(int i=0;i<m;i++)
         {
-            if(mr[i]>=tmp3)
+            cin>>arr[i];
+        }
+        int j=0;
+        for(int i=0;i<m;i++)
+        {
+            if(arr[i]>=tmp3)
             {
                 cout<<-1<<endl;
                 continue;
             }
-            if(check[mr[i]]==true)
+            if(tmp[arr[i]]==true)
             {
                 cout<<0<<endl;
                 continue;
             }
-
-            else
+            else if(tmp[arr[i]]!=true)
             {
-                j = mr[i];
+                j = arr[i];
                 count =0;
-                while(check[j]!=true)
+                while(tmp[j]!=true)
                 {
                     count++;
                     j++;
