@@ -1,91 +1,46 @@
-#include<bits/stdc++.h>
-#include<limits.h>
-using namespace std ;
-#define speedup ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-
-#define ll long long int
-#define endl "\n"
-#define REP(i,n) for(int i=0;i<n;i++)
-
-// #define max INT_MAX
-
-
-int main()
-{
-    speedup;
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        int n,m;
-        cin>>n>>m;
-
-        int tmp1,tmp2,tmp3;
-        tmp3 =0;
-        vector<bool> check(INT_MAX,false);
-
-        vector<pair<int ,int> > arr;
-        for(int i=0;i<n;i++)
+        #include<bits/stdc++.h>
+        using namespace std;
+        vector<int>adj[2001];
+        int level[2001];
+        int main()
         {
-            cin>>tmp1>>tmp2;
-
-            if(tmp3<tmp2)
-                tmp3 = tmp2;
-
-            for(int j=tmp1;j<tmp2;j++)
-                check[j]=true;
-            // arr.push_back(make_pair(tmp1,tmp2));
-        }
-
-        // vector<bool> check(tmp3,false);
-        // cout<<check[3]<<endl;
-        // vector<pair<int,int> >::iterator itr= arr.begin();
-
-        // for(itr=arr.begin();itr!=arr.end();++itr)
-        // for(int i=0;i<n;i++)
-        // {
-        //     for(int j=arr[i].first;j<arr[i].second;j++)
-        //         check[j]=true;
-        // }
-
-        // for(int i=0;i<tmp3;)
-
-        vector<int> mr;
-        int count=0;
-        int tmp;
-
-        for(int i=0;i<m;i++)
+            int i,j,n,k,l,a,mx=0;
+            cin>>n;
+            vector<int>v;
+            for(i=1;i<=n;i++)
             {
-                    cin>>tmp;
-                    mr.push_back(tmp);
-            }
-
-        int j = 0;
-
-        for(int i=0;i<m;i++)
-        {
-            if(mr[i]>=tmp3)
-            {
-                cout<<-1<<endl;
-                continue;
-            }
-            if(check[mr[i]]==true)
-            {
-                cout<<0<<endl;
-                continue;
-            }
-
-            else
-            {
-                j = mr[i];
-                count =0;
-                while(check[j]!=true)
+                cin>>a;
+                if(a==-1)
                 {
-                    count++;
-                    j++;
+                    v.push_back(i);
                 }
-                cout<<count<<endl;
+                else
+                {
+                    adj[a].push_back(i);
+                }
             }
+            for(k=0;k<v.size();k++)
+            {
+                int cnt=0,top2;
+                int top=v[k];
+                queue<int>q;
+                q.push(top);
+                if(adj[top].size()==0)
+                    continue;
+                while(!q.empty())
+                {
+                    top=q.front();
+                    for(i=0;i<adj[top].size();i++)
+                    {
+                        top2=adj[top][i];
+                        level[top2]=level[top]+1;
+                        q.push(top2);
+                        //cout<<"TOp 2 = "<<top2<<endl;
+                    }
+                    q.pop();
+                }
+                if(mx<=level[top2])
+                    mx=level[top2];
+            }
+                cout<<mx+1<<endl;
         }
-    }
-}
