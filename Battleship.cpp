@@ -26,18 +26,20 @@ int main()
 {
     int k,n;
     cin>>k>>n;
-
-    vector<vector<string> > field;
-
-    for(int i =0;i<n;i++)
+    vector<string> field(n);
+    for(int i =0;i<k;i++)
     {
-        cin.ignore();
+        // cin.ignore();
         string ss;
-        getline(cin,ss);
+        cin>>ss;
         field.pb(ss);
-
     }
 
-    cout<<endl;
-    cout<<field[5][5];
+
+    for(int i =0;i<field.size();i++)
+    {
+        cout<<field[i]<<endl;
+    }
+    // cout<<endl;
+    // cout<<field[5][5];
 }

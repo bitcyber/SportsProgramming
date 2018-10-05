@@ -59,7 +59,6 @@ int pos=l;
                 pos=l;
             }
     }
-
     cout<<fcount<<endl;
 
 
