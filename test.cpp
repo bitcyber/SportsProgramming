@@ -1,46 +1,140 @@
-        #include<bits/stdc++.h>
-        using namespace std;
-        vector<int>adj[2001];
-        int level[2001];
-        int main()
+#include<bits/stdc++.h>
+#include<limits.h>
+using namespace std;
+
+#define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl "\n"
+
+// #define mp make_pair
+// #define
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef pair<int,int> ii;
+typedef vector<ii> vii;
+typedef vector<vii> vvii;
+typedef set<int> si;
+typedef map<string,int> msi;
+
+
+ll digisum(ll x)
+{
+    ll tmp = x;
+    ll sum = 0;
+    while(tmp>0)
+    {
+        sum+=tmp%10;
+        tmp/=10;
+    }
+    return sum;
+}
+
+ll mini;
+ll mincount;
+unordered_map<ll,ll> mp;
+
+void func(ll num,ll count, ll d)
+{
+    ll num1 = num;
+    ll c =0;
+    if(num1>9)
+    {
+        c++;
+        num1= digisum(num1);
+    }
+    if(mp.find(num1)!=mp.end())
+    {
+        mp[num1]=count+c;
+        mini = num1;
+        mincount = count+c;
+    }
+    else if(mini==num1)
+    {
+        if(mincount>(count+c))
         {
-            int i,j,n,k,l,a,mx=0;
-            cin>>n;
-            vector<int>v;
-            for(i=1;i<=n;i++)
-            {
-                cin>>a;
-                if(a==-1)
-                {
-                    v.push_back(i);
-                }
-                else
-                {
-                    adj[a].push_back(i);
-                }
-            }
-            for(k=0;k<v.size();k++)
-            {
-                int cnt=0,top2;
-                int top=v[k];
-                queue<int>q;
-                q.push(top);
-                if(adj[top].size()==0)
-                    continue;
-                while(!q.empty())
-                {
-                    top=q.front();
-                    for(i=0;i<adj[top].size();i++)
-                    {
-                        top2=adj[top][i];
-                        level[top2]=level[top]+1;
-                        q.push(top2);
-                        //cout<<"TOp 2 = "<<top2<<endl;
-                    }
-                    q.pop();
-                }
-                if(mx<=level[top2])
-                    mx=level[top2];
-            }
-                cout<<mx+1<<endl;
+            mincount=count+c;
         }
+    }
+
+    func(num+d,count+1,d);
+    func(num1,count+c,d);
+    mp.erase(num1);
+}
+
+
+int main()
+{
+    fast_io;
+    int t;
+    cin>>t;
+    cout<<1<<endl;
+    while(t--)
+    {    ll n,d;
+        cin>>n>>d;
+        mini = INT_MAX;
+        mincount = INT_MAX;
+        cout<<"yes";
+        func(n,0,d);
+        cout<<mini<<" "<<mincount<<endl;
+
+    }
+
+}
+
+#include<bits/stdc++.h>
+#include<limits.h>
+using namespace std;
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef pair<int,int> ii;
+typedef vector<ii> vii;
+typedef vector<vii> vvii;
+typedef set<int> si;
+typedef map<string,int> msi;
+
+#define fi  first
+#define se  second
+#define mp  make_pair
+#define pb  push_back
+#define pf  push_front
+#define in  insert
+#define endl "\n"
+#define For(i,j,k) for(ll i=j;i<k;i++)
+#define Rev(i,j,k) for(ll i=j;i>=k;i--)
+#define Rep(i,k)   for(ll i=0;i<k;i++)
+#define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+
+int main()
+{
+
+}#include<bits/stdc++.h>
+#include<limits.h>
+using namespace std;
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef pair<int,int> ii;
+typedef vector<ii> vii;
+typedef vector<vii> vvii;
+typedef set<int> si;
+typedef map<string,int> msi;
+
+#define fi  first
+#define se  second
+#define mp  make_pair
+#define pb  push_back
+#define pf  push_front
+#define in  insert
+#define endl "\n"
+#define For(i,j,k) for(ll i=j;i<k;i++)
+#define Rev(i,j,k) for(ll i=j;i>=k;i--)
+#define Rep(i,k)   for(ll i=0;i<k;i++)
+#define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+
+int main()
+{
+
+}

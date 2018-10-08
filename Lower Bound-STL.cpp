@@ -9,15 +9,11 @@ int main()
     int t;
     cin>>t;
     int x,y;
-
     set <int> ss;
-
     while(t--)
 
     {
-
         cin>>y>>x;
-
         if(y==1)
             ss.insert(x);
         else if(y==2)
