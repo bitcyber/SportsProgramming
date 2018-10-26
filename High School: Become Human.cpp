@@ -22,9 +22,15 @@ typedef map<string,int> msi;
 #define Rep(i,k)   for(ll i=0;i<k;i++)
 #define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-
 int main()
 {
     fast_io;
+    ll x,y;
+    cin>>x>>y;
 
+    if(y*log(x)>x*log(y))
+        cout<<">"<<endl;
+    else if(y*log(x)<x*log(y))
+        cout<<"<"<<endl;
+    else cout<<"="<<endl;
 }

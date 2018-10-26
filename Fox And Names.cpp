@@ -26,5 +26,16 @@ typedef map<string,int> msi;
 int main()
 {
     fast_io;
+    int n;
+    cin>>n;
+    vector<string> str;
+
+    For(i,0,n)
+    {
+        cin.ignore();
+        string tmp;
+        cin>>tmp;
+        str.pb(tmp);
+    }
 
 }

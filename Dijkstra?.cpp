@@ -17,33 +17,27 @@ typedef set<int> si;
 typedef map<string,int> msi;
 
 vii edges[100010];
-
 ll dis[100010];
 int par[100010] = {0};
-bool done[100010] ={false};
-
+bool visited[100010] ={false};
 priority_queue<ii> q_dij;
-
-
 void dijkstra(int source,int dest)
 {
     dis[source]=0;
     par[source]=0;
-    done[source]=true;
-
-    q_dij.push(mp(done[source],source));
+    visited[source]=true;
+    q_dij.push(mp(visited[source],source));
 
     while(q_dij.empty()==false)
     {
         int s = q_dij.top().second;
-
             if(s==dest)
                 return;
-            done[s]=true;
+            visited[s]=true;
             q_dij.pop();
             for(ll i=0;i<edges[s].size();i++)
             {
-                if(!done[edges[s][i].first] && dis[edges[s][i].first]>dis[s]+edges[s][i].second)
+                if(!visited[edges[s][i].first] && dis[edges[s][i].first]>dis[s]+edges[s][i].second)
                 {
                     dis[edges[s][i].first]= dis[s]+edges[s][i].second;
                     par[edges[s][i].first] = s;
@@ -51,7 +45,6 @@ void dijkstra(int source,int dest)
                 }
             }
     }
-
 }
 
 

@@ -34,6 +34,9 @@ bool visited[10010]={false};
 int val[100010] = {-1};
 ll sz=0;
 
+
+// int dfs()
+
 ll recur(ll x)
     {
         // sz = mp.size();

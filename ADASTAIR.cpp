@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 #include<limits.h>
 using namespace std;
+
 typedef long long ll;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
@@ -26,5 +27,28 @@ typedef map<string,int> msi;
 int main()
 {
     fast_io;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,k;
+        cin>>n>>k;
+        vi h;
+        int tmp1 =0;
+        int counter =0;
+        For(i,0,n)
+        {
+            int tmp;
+            cin>>tmp;
+
+            // h.pb(tmp);
+            int tmp2 = (tmp-tmp1)/k;
+            if((tmp-tmp1)%k==0 && tmp2>0)
+                tmp2-=1;
+            counter+=tmp2;
+            tmp1 =tmp;
+        }
+        cout<<counter<<endl;
+    }
 
 }

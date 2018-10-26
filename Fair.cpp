@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<limits.h>
+
 using namespace std;
 typedef long long ll;
 typedef vector<int> vi;
@@ -23,8 +24,36 @@ typedef map<string,int> msi;
 #define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 
+
+bool visi[10010]={0}
+
+void bfs()
+{
+
+}
+
+
 int main()
 {
     fast_io;
+    int n,m,k,s;
+    cin>>n>>m>>k>>s;
+    vi a;
+    for(int i=0;i<k;i++) {int tmp;cin>>tmp;a.pb(tmp);}
 
+    vi roads[m];
+
+    for(int i=0;i<m;i++)
+    {
+        int a,b;
+        cin>>a>>b;
+        roads[a].pb(b);
+        roads[b].pb(a);
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        int counter =0;
+
+    }
 }

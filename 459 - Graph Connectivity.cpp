@@ -60,7 +60,7 @@ int main()
         while(getline(cin,s) && s!="")
         {
             G[s[0]-'A'].pb(s[1]-'A');
-            G[s[1]-'A'].pb(s[0]-'A')
+            G[s[1]-'A'].pb(s[0]-'A');
         }
         int nCC =0;
         for(int i=0;i<nNodes;++i)

@@ -26,5 +26,31 @@ typedef map<string,int> msi;
 int main()
 {
     fast_io;
+    map<string,string> mp1;
+    // mp1.insert()
+    mp1["purple"]="Power";
+    mp1["blue"]="Space";
+    mp1["orange"]="Soul";
+    mp1["green"]="Time";
+    mp1["red"]="Reality";
+    mp1["yellow"]="Mind";
+    int n;
+    cin>>n;
+    map<string,int> mp;
 
+    for(int i=1;i<=n;i++)
+    {
+        string xx;
+        cin>>xx;
+        mp[xx]=1;
+    }
+
+    cout<<6-n<<endl;
+
+map<string,string>::iterator itr=mp1.begin();
+    for(;itr!=mp1.end();++itr)
+    {
+        if(mp[itr->first]!=1)
+            cout<<itr->second<<endl;
+    }
 }

@@ -23,8 +23,36 @@ typedef map<string,int> msi;
 #define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 
+
 int main()
 {
     fast_io;
+    int n,m,k;
+    cin>>n>>m>>k;
+    vi sc[n];
+
+    for(int i=0;i<n;i++)
+    {
+        int t;
+        cin>>t;
+        for(int j=0;j<t;j++)
+            {
+                int tmp;
+                cin>>tmp;
+                sc[i].pb(tmp);
+            }
+    }
+    vii graph[m];
+
+    for(int i=0;i<m;i++)
+    {
+        int a,b,w;
+        cin>>a>>b>>w;
+        graph[a].pb(mp(b,w));
+        graph[b].pb(mp(a,w));
+    }
+
+
+    
 
 }

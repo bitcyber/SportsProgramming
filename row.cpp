@@ -26,5 +26,42 @@ typedef map<string,int> msi;
 int main()
 {
     fast_io;
+    int n;
+    cin>>n;
+    string xx;
+    cin>>xx;
+    // cout<<xx<<endl;
+    char s1;
+
+    if(n<=2)
+    {
+        if(xx=="11")
+            cout<<"No"<<endl;
+        else
+            cout<<"Yes"<<endl;
+        return 0;
+    }
+
+    for(int i=0;i<n-1;i++)
+    {
+        s1=xx[i];
+        if(s1==xx[i+1] && s1=='1')
+            {
+                cout<<"No"<<endl;
+                return 0;
+            }
+        else if(s1==xx[i+1] && s1==xx[i+2] && s1=='0')
+            {
+                cout<<"No"<<endl;
+                return 0;
+            }
+
+    }
+
+cout<<"Yes"<<endl;
+
+
+
+
 
 }

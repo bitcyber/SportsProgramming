@@ -26,5 +26,6 @@ typedef map<string,int> msi;
 int main()
 {
     fast_io;
+    
 
 }

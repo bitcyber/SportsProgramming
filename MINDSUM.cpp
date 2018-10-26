@@ -16,6 +16,14 @@ typedef vector<vii> vvii;
 typedef set<int> si;
 typedef map<string,int> msi;
 
+
+
+ll n,d,t;
+ll fcount;
+ll tcount ;
+ll sn ;
+
+
 ll digisum(ll x)
 {
     ll tmp = x;
@@ -24,60 +32,76 @@ ll digisum(ll x)
     {
         sum+=tmp%10;
         tmp/=10;
+
     }
-    return sum;
+    tcount+=1;
+    ll ss =sum;
+    if(sum>=10)
+        ss=digisum(sum);
+    return ss;
 }
 
 
-ll val[20]={-1};
-int recur(int x,int g)
-    {
-        if(val[x]==-1)
-        {
-            if(x==1)
-                val[x]=0;
-            else
-                val[x]= recur(digisum(digisum(x)+g),g)+1;
-        // cout<<recur(digisum(x),g)<<"  ";}
-        }
-        return val[x];
-    }
 
+void func()
+{
+    for(int j=1;j<=10;j++)
+    {
+        t = n+d *j;
+        // cout<<"t "<<t<<"  sn "<<sn<<endl;
+        if(t>=10)
+        {
+            t = digisum(t);
+            fcount += tcount;
+            tcount =0;
+        }
+        if(sn<t)
+        {
+            sn=t;
+            fcount +=j;
+        }
+    }
+    cout<<sn<<" "<<fcount<<endl;
+    tcount=0;
+    fcount=0;
+}
 
 int main()
 {
-    ll n,d;
-
     fast_io;
     int t;
     cin>>t;
     while(t--)
     {
         cin>>n>>d;
-        ll steps =1;
-        ll a = n+d
+        // cout<<digisum(99999)<<" "<<tcount<<endl;
+        func();
 
-        if(n==1)
-            {
-                cout<<1<<" "<<0<<endl;
 
-            }
+        // ll steps =1;
+        // ll a = n+d
 
-        while(digisum(a)>digisum(n))
-        {
-            n =a;
-            a+=d;
-            steps++;
-            cout<<"digisum("<<a<<") : "<<digisum(a)<<endl;
-            if(digisum(a)==10)
-                {steps++;
-                    break;}
-        }
-        ll x;
-        x = digisum(a);
-        if(x==10)
-            x=1;
-        cout<<x<<" "<<++steps<<endl;;
+        // if(n==1)
+        //     {
+        //         cout<<1<<" "<<0<<endl;
+
+        //     }
+
+        // while(digisum(a)>digisum(n))
+        // {
+        //     n =a;
+        //     a+=d;
+        //     steps++;
+        //     cout<<"digisum("<<a<<") : "<<digisum(a)<<endl;
+        //     if(digisum(a)==10)
+        //         {steps++;
+        //             break;}
+        // }
+        // ll x;
+        // x = digisum(a);
+        // if(x==10)
+        //     x=1;
+        // cout<<x<<" "<<++steps<<endl;;
 
 
         // ll steps = 1;

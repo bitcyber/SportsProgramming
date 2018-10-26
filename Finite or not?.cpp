@@ -23,8 +23,37 @@ typedef map<string,int> msi;
 #define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 
+ll gcd(ll a,ll b)
+{
+    if(a%b==0) return b;
+    return gcd(b,a%b);
+}
+
+
+
 int main()
 {
-    fast_io;
 
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        unsigned long long float p,q,b;
+        cin>>p>>q>>b;
+
+        ll d= gcd(p,q)
+        p/=d;
+        q/=d;
+        while(1)
+        {
+            d= gcd(q,b);
+
+            if(d==1)
+                break;
+            while(q%d==0) q/=d;
+        }
+    if (b%q==0||q%b==0||!q) printf("Finite\n");
+    else printf("Infinite\n");
+
+    }
 }
