@@ -23,37 +23,75 @@ typedef map<string,int> msi;
 #define Rep(i,k)   for(ll i=0;i<k;i++)
 #define fast_io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
+const int N = 100010;
+const int M = 110;
 
-
-bool visi[10010]={0}
-
-void bfs()
-{
-
-}
-
+vi e[N];
+int a[N];
+int dis[N][M];
+bool vis[N];
 
 int main()
 {
     fast_io;
     int n,m,k,s;
     cin>>n>>m>>k>>s;
-    vi a;
-    for(int i=0;i<k;i++) {int tmp;cin>>tmp;a.pb(tmp);}
+    // cin.ignore();
 
-    vi roads[m];
-
-    for(int i=0;i<m;i++)
+    for(int i=1;i<=n;++i)
     {
-        int a,b;
+       cin>>a[i];
+    }
+
+    for(int i=0,a,b;i<m;++i)
+    {
         cin>>a>>b;
-        roads[a].pb(b);
-        roads[b].pb(a);
+        e[a].pb(b);
+        e[b].pb(a);
     }
-
-    for(int i=0;i<n;i++)
+    for(int i=1;i<=k;++i)
     {
-        int counter =0;
+        memset(vis,0,sizeof(vis));
+        queue<int> q;
 
+        for(int j=1;j<=n;++j)
+        {
+            if(a[j]==i)
+            {
+                vis[j]=true;
+                q.push(j);
+            }
+        }
+        while(!q.empty())
+        {
+            int u=q.front();
+            q.pop();
+            for(auto v: e[u])
+            {
+                if(!vis[v])
+                {
+                    vis[v]=true;
+                    dis[v][i]=dis[u][i]+1;
+                    q.push(v);
+                }
+            }
+
+        }
     }
+
+    for(int i=1;i<=n;++i)
+    {
+        sort(dis[i]+1,dis[i]+1+k);
+        ll sum=0;
+        for(int j=1;j<=s;++j)
+        {
+            sum+=dis[i][j];
+        }
+        cout<<sum<<" ";
+    }
+    cout<<endl;
+
+return 0;
 }
+
+//important
