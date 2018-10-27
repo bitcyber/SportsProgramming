@@ -1,3 +1,8 @@
+/*
+ Time & Date of creation 19:41:13 27/10/2018  
+ Author : Amit Kumar
+ Copyright © amit2rockon. All rights reserved. 
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -21,5 +26,15 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int x,y,z;
+        cin>>x>>y>>z;
+        if((x+y)==z || (x+z)==y || (y+z)==x)
+            cout<<"yes"<<endl;
+        else cout<<"no"<<endl;
+    }
 
 }

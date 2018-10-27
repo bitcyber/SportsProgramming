@@ -1,3 +1,8 @@
+/*
+ Time & Date of creation 15:24:54 27/10/2018  
+ Author : Amit Kumar
+ Copyright © amit2rockon. All rights reserved. 
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
