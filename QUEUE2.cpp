@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 14:32:42 27/10/2018  
+ Time & Date of creation 13:33:38 28/10/2018  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -22,41 +22,27 @@ typedef vector<vii> vvii;
 #define endl "\n"
 #define fast_IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-bool cmp(string s1,string s2)
-{
-    int l1 = s1.size();
-    int l2 = s2.size();
-    return l1<l2;
-
-}
 
 int main()
 {
     fast_IO;
-    int n;
-    cin>>n;
-
-    vector<string> ss(n);
-
-    for(int i=0;i<n;++i)
+    int t;
+    cin>>t;
+    while(t--)
     {
-        cin>>ss[i];
-    }
-    sort(ss.begin(),ss.end(),cmp);
+        int n,m,k,l;
+        cin>>n>>m>>k>>l;
 
-    for(int i=0;i<n-1;++i)
-    {
-        if(ss[i+1].find(ss[i])==string::npos)
+        vi aa;
+
+        for(int i=0;i<n;i++)
         {
-            cout<<"NO"<<endl;
-            return 0;
+            int tmp;
+            cin>>tmp;
+            aa.pb(tmp);
         }
+
     }
 
-    cout<<"YES"<<endl;
-    for(auto it:ss)
-        cout<<it<<endl;
-
-    return 0;
 
 }
