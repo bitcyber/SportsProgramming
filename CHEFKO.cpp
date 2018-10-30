@@ -23,6 +23,8 @@ typedef vector<vii> vvii;
 #define fast_IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 
+int arr[100010]={0};
+
 int main()
 {
     fast_IO;
@@ -33,23 +35,32 @@ int main()
         int k,n;
         cin>>n>>k;
         ll tmp1,tmp2,tmp3;
-        map<pair<ll,ll>,ll > mm;
-        map<pair<ll,ll>,ll >::iterator itr1,itr2;
+        // map<pair<ll,ll>,ll > mm;
+        // map<pair<ll,ll>,ll >::iterator itr1,itr2;
+        int maxi=0;
 
         for(int i=0;i<n;i++)
         {
             cin>>tmp1>>tmp2;
-            tmp3 = tmp2-tmp1;
-            mm[mp(tmp1,tmp2)]=tmp3;
+            // tmp3=arr[tmp1];
+
+            if(tmp2>maxi)
+                maxi=tmp2;
+
+            tmp3++;
+            for(int j=tmp1;j<=tmp2;j++)
+            {cout<<endl;
+                arr[j]+=1;
+            for(int i=1;i<=maxi;i++)
+                cout<<arr[i]<< " ";
+
+            }
 
         }
+        // for(int i=1;i<=maxi;i++)
+        //     cout<<arr[i]<< " ";
 
-        for(itr1 = mm.begin();itr1!=mm.end();++itr1)
-        {
-            // cout<<itr1->fi.fi<<"  "<<itr1->fi.se<<"   "<<itr1->se<<endl;
-            
-        }
-
+        cout<<endl;
 
 
     }
