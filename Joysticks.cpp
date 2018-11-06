@@ -1,7 +1,7 @@
 /*
- Time & Date of creation 10:03:45 01/11/2018  
+ Time & Date of creation 14:23:48 31/10/2018  
  Author : Amit Kumar
- Copyright © amit2rockon. All rights reserved. 
+ Copyright © amit2rockon. All rights reserved.
 */
 #include<bits/stdc++.h>
 using namespace std;
@@ -26,6 +26,31 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    int a,b;
+    cin>>a>>b;
+    int count=0;
+    if(a==1 && b==1)
+        {cout<<0<<endl;
+        return 0;}
 
+
+    while(a>0 && b>0)
+    {
+
+        
+        if(a<b)
+        {
+            a++;
+            b-=2;
+        }
+        else
+        {
+            b++;
+            a-=2;
+        }
+        // cout<<"a "<<a<<" b "<<b<<endl;
+        count++;
+    }
+    cout<<count<<endl;
 
 }

@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 10:03:45 01/11/2018  
+ Time & Date of creation 19:56:55 05/11/2018  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -27,5 +27,9 @@ int main()
 {
     fast_IO;
 
+    int n;
+    vi aa(n+1);
+    for(int i=1;i<=n;i++)
+        cin>>aa[i];
 
 }

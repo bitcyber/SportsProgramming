@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 10:03:45 01/11/2018  
+ Time & Date of creation 17:03:18 02/11/2018  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -26,6 +26,13 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
-
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        ll a,b;
+        cin>>a>>b;
+        cout<<"YES"<<endl;
+    }
 
 }

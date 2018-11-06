@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 10:03:45 01/11/2018  
+ Time & Date of creation 15:30:53 31/10/2018  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -26,6 +26,36 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+
+    int n;
+    cin>>n;
+    vi aa(n);
+    int maxi=1;
+    int count=1;
+
+    for(int i=0;i<n;i++)
+    {
+        cin>>aa[i];
+    }
+
+    for(int i=0;i<n-1;i++)
+    {
+        if(aa[i]<aa[i+1])
+        {
+            count+=1;
+            if(maxi<count)
+                maxi=count;
+        }
+        else
+        {
+            count=1;
+            // cout<<count<<endl;
+
+        }
+    }
+
+    cout<<maxi<<endl;
+
 
 
 }

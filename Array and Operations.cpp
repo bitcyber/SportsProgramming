@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 10:03:45 01/11/2018  
+ Time & Date of creation 04:44:41 03/11/2018  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -26,6 +26,24 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    int n,m;
+    cin>>n>>m;
+    vector<ll> aa(n);
+
+    for(int i=0;i<n;i++)
+        cin>>aa[i];
+
+    vvi gg(n);
+
+    for(int i=0;i<m;i++)
+    {
+        int a,b;
+        cin>>a>>b;
+        gg[a].pb(b);
+        gg[b].pb(a);
+
+    }
+
 
 
 }
