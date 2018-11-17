@@ -21,7 +21,7 @@ typedef vector<vii> vvii;
 #define mod 1000000007
 #define endl "\n"
 #define fast_IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
-
+// partially accepted
 
 int main()
 {
