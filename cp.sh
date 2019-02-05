@@ -1,5 +1,5 @@
 #!/usr/local/bin/zsh
-cd ./github/competitiveProgrammingSolutions
+#cd ./github/competitiveProgrammingSolutions
 # read -p "Enter Name: " prob;
 # echo "Creating $prob :";
 # printf "Create Folder:";
