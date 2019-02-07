@@ -1,114 +1,80 @@
-#include <bits/stdc++.h>
-
+/*
+ Time & Date of creation 23:54:22 06/02/2019  
+ Copyright © amit2rockon. All rights reserved. 
+*/
+#include<bits/stdc++.h>
 using namespace std;
 
-vector<string> split_string(string);
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef pair<int,int> ii;
+typedef vector<ii> vii;
+typedef vector<vii> vvii;
 
-// Complete the cost function below.
-int cost(vector<int> B) 
-{
-        vector<int> brr(B);
-        int n= B.size();
-
-        int sum1=0,sum2=0;
-        for(int i=0;i<n;i++)
-        {
-            int xx;
-            cin>>xx;
-            brr.push_back(xx);
-
-            if(i%2==0)
-                sum1+=xx;
-            else sum2+=xx;
-        }
-
-        if(sum1<=sum2)
-        {
-            for(int i=0;i<n;i++)
-            {
-                if(i%2==0)
-                    brr[i]=1;
-            }
-        }
-        else
-        {
-            for(int i=0;i<n;i++)
-            {
-                if(i%2==1)
-                    brr[i]=1;
-            }
-        }
-
-        int sum3 =0;
-        for(int i=1;i<n;i++)
-        {
-            sum3 = sum3 + abs(brr[i]-brr[i-1]);
-        }
-    return sum3;
-
-}
+#define fi  first
+#define se  second
+#define mp  make_pair
+#define pb  push_back
+#define mem(a,b) memset(a,b,sizeof(a))
+#define mod 1000000007
+#define endl "\n"
+#define fast_IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
 int main()
 {
-    ofstream fout(getenv("OUTPUT_PATH"));
+    fast_IO;
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,k,m;
+        cin>>n>>k>>m;
 
-    int t;
-    cin >> t;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        ll box =n;
+        int count =0;
+        double tot_prob =0,cur_prob=0;
 
-    for (int t_itr = 0; t_itr < t; t_itr++) {
-        int n;
-        cin >> n;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        tot_prob=double(1)/double(n);
 
-        string B_temp_temp;
-        getline(cin, B_temp_temp);
+        for(int i=1;i<=m;i++)
+        {
+            box =n;
+            int first_time =1;
 
-        vector<string> B_temp = split_string(B_temp_temp);
+            for(int j=1;j<i;j++)
+            {
+                cout<<"no of boxes: "<<box<<endl;
 
-        vector<int> B(n);
+                if(box>k)
+                {
+                    box=box%k;
+                    continue;
+                }
+                if(first_time)
+                {
+                    cur_prob = double(box-1)/double(box);
+                    box+=k;
+                    first_time=0;
+                }
+                else
+                {
+                    cur_prob*= double(box-1)/double(box);
+                    box+=k;
+                }
+            // cout<<"current probability : "<<cur_prob<<endl;
+            }
+            cur_prob*=double(1)/double(box);
+            tot_prob+=cur_prob ;
+            cout<<"current probability : "<<cur_prob<<endl;
+            cur_prob=0;
 
-        for (int i = 0; i < n; i++) {
-            int B_item = stoi(B_temp[i]);
-
-            B[i] = B_item;
         }
+        tot_prob=tot_prob;
 
-        int result = cost(B);
+        cout<<"total probability : "<<tot_prob<<endl;
 
-        fout << result << "\n";
+
     }
 
-    fout.close();
-
-    return 0;
-}
-
-vector<string> split_string(string input_string) {
-    string::iterator new_end = unique(input_string.begin(), input_string.end(), [] (const char &x, const char &y) {
-        return x == y and x == ' ';
-    });
-
-    input_string.erase(new_end, input_string.end());
-
-    while (input_string[input_string.length() - 1] == ' ') {
-        input_string.pop_back();
-    }
-
-    vector<string> splits;
-    char delimiter = ' ';
-
-    size_t i = 0;
-    size_t pos = input_string.find(delimiter);
-
-    while (pos != string::npos) {
-        splits.push_back(input_string.substr(i, pos - i));
-
-        i = pos + 1;
-        pos = input_string.find(delimiter, i);
-    }
-
-    splits.push_back(input_string.substr(i, min(pos, input_string.length()) - i + 1));
-
-    return splits;
 }
