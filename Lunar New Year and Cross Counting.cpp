@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 23:59:52 07/02/2019  
+ Time & Date of creation 21:11:17 11/02/2019  
  Copyright © amit2rockon. All rights reserved. 
 */
 #include<bits/stdc++.h>
@@ -25,18 +25,29 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
-    ll n,m;
-    cin>>n>>m;
-    vi arr(n+5);
-    // map<ll,ll> mpp;
+    int n;
+    cin>>n;
 
-    for(int i=0;i<m;i++)
+    vector<string> arr;
+
+    for(int i=0;i<n;i++)
     {
-        int xx;
-        cin>>xx;
-        arr[xx]++;
+        string bb;
+        cin>>bb;
+
+        arr.pb(bb);
     }
 
-
+    int count =0;
+    for(int i=1;i<n-1;i++)
+    {
+        for(int j=1;j<n-1;j++)
+        {
+            if(arr[i-1][j-1]=='X' &&arr[i-1][j+1]=='X'&&arr[i+1][j-1]=='X'&&arr[i+1][j+1]=='X'&&arr[i][j]=='X')
+                // if(arr[i][j]=='X')
+                    count++;
+        }
+    }
+    cout<<count<<endl;
 
 }

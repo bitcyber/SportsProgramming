@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 23:59:52 07/02/2019  
+ Time & Date of creation 21:31:00 11/02/2019  
  Copyright © amit2rockon. All rights reserved. 
 */
 #include<bits/stdc++.h>
@@ -25,17 +25,26 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
-    ll n,m;
-    cin>>n>>m;
-    vi arr(n+5);
-    // map<ll,ll> mpp;
-
-    for(int i=0;i<m;i++)
+    int n;
+    cin>>n;
+    vi arr;
+    ll sum=0;
+    for(int i=0;i<n;i++)
     {
         int xx;
         cin>>xx;
-        arr[xx]++;
+        arr.pb(xx);
+        // sum+=xx;
     }
+
+    // int avg = sum/n;
+    sort(arr.begin(),arr.end());
+    for(int i=0;i<n/2;i++)
+    {
+        sum+= (arr[i]+arr[n-1-i])*(arr[i]+arr[n-1-i]);
+    }
+    cout<<sum<<endl;
+
 
 
 

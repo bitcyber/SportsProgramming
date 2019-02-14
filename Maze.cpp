@@ -1,5 +1,6 @@
 /*
- Time & Date of creation 23:59:52 07/02/2019  
+ Time & Date of creation 10:49:21 12/02/2019  
+ Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
 #include<bits/stdc++.h>
@@ -25,18 +26,17 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
-    ll n,m;
-    cin>>n>>m;
-    vi arr(n+5);
-    // map<ll,ll> mpp;
+    ll n,m,k;
+    cin>>n>>m>>k;
 
-    for(int i=0;i<m;i++)
+    vector<string> arr;
+
+    for(int i=0;i<n;i++)
     {
-        int xx;
-        cin>>xx;
-        arr[xx]++;
+        string ss;
+        cin>>ss;
+        arr.pb(ss);
     }
-
 
 
 }
