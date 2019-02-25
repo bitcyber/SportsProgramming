@@ -17,13 +17,11 @@ typedef vector<vii> vvii;
 #define se  second
 #define mp  make_pair
 #define pb  push_back
-#define N 100001
 #define mem(a,b) memset(a,b,sizeof(a))
 #define mod 1000000007
 #define endl "\n"
 #define fast_IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-int dp[N][2];
 
 int main()
 {
@@ -44,41 +42,31 @@ int main()
 
     for(int i=0;i<arr.size();i++)
     {
-        ii boom = arr[i];
-        int x = boom.se,y=boom.fi;
         if(i%2==0)
             {
-                dp[y][0]=x;
+                c.pb(arr[i].se);
             }
         else
         {
-            dp[y][1]=x;
+            d.pb(arr[i].se);
         }
     }
 
-
     ll sum=0;
     int cur =1 ;
-
-    for(int i=1;i<=n;i++)
+    for(int i=0;i<n;i++)
     {
-        sum+=abs(cur-dp[i][0]);
-        cur= dp[i][0];
-        cout<<cur<<" x"<<endl;
-
+        sum+=abs(cur-c[i]);
+        cur = c[i];
     }
-    cur =1 ;
-    for(int i=1;i<=n;i++)
+    cur=1;
+    for(int i=0;i<n;i++)
     {
-        sum+=abs(cur-dp[i][1]);
-        cur= dp[i][1];
-        cout<<cur<<" y"<<endl;
-
-
+        sum+=abs(cur-d[i]);
+        cur =d[i];
     }
     // sum+=1;
     cout<<sum<<endl;
-
 
 
 }

@@ -1,3 +1,7 @@
+/*
+ Time & Date of creation 14:15:40 14/02/2019  
+ Copyright © amit2rockon. All rights reserved. 
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -8,11 +12,10 @@ typedef pair<int,int> ii;
 typedef vector<ii> vii;
 typedef vector<vii> vvii;
 
-#define ff  first
-#define ss  second
+#define fi  first
+#define se  second
 #define mp  make_pair
 #define pb  push_back
-#define N 100001
 #define mem(a,b) memset(a,b,sizeof(a))
 #define mod 1000000007
 #define endl "\n"
