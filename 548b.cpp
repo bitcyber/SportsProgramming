@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
+ Time & Date of creation 21:38:11 21/03/2019  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -27,5 +27,33 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    ll n;
+    cin>>n;
+    vi arr;
+    vii maxi;
+    int tmp=0;
+    for(int i=0;i<n;i++)
+    {
+        int xx;
+        cin>>xx;
+        arr.pb(xx);
+
+        if(tmp<=xx)
+        {
+            tmp = xx;
+        }
+        else 
+        {
+            maxi.pb(mp(tmp,i));
+        }
+
+    }
+    for(int i=0;i<maxi.size();i++)
+    {
+        cout<<maxi[i].ff<<" "<<maxi[i].ss<<endl;
+    }
+
+
+
 
 }

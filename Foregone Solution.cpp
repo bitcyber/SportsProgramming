@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 20:11:26 24/02/2019  
+ Time & Date of creation 13:51:40 06/04/2019  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -13,54 +13,53 @@ typedef pair<int,int> ii;
 typedef vector<ii> vii;
 typedef vector<vii> vvii;
 
-#define fi  first
-#define se  second
+#define ff  first
+#define ss  second
 #define mp  make_pair
 #define pb  push_back
-#define N 100005
+#define N 100001
 #define mem(a,b) memset(a,b,sizeof(a))
 #define mod 1000000007
 #define endl "\n"
 #define fast_IO ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 
-bool* primem()
+
+ll hola(ll tmp)
 {
-   static bool dpp[N+5];
-    for(int i=0;i<N;i++)
-        dpp[i]=true;
-    int nn =sqrt(N) ;
-
-    for(int i=2;i< nn;i++)
+    ll aa =0;
+    ll bb =0;
+    int count =0;
+    while(tmp>0)
     {
-        if(dpp[i]==true)
+        count++;
+        bb = tmp%10;
+        if(bb==4)
         {
-            for(int j = i*i;j<=N;j+=i)
-            {
-                dpp[j]=false;
-            }
+            aa = 3*pow(10,count) +aa;
         }
+        else
+        {
+           aa=  bb*pow(10,count) +aa;
+        }
+        tmp = tmp/10;
     }
-    return dpp;
+    return aa/10;
 }
-
-
-
-
 int main()
 {
     fast_IO;
     int t;
     cin>>t;
-    bool* hola = primem();
+    int ab = 0;
     while(t--)
     {
+        ab++;
         ll n;
         cin>>n;
-        vi arr(n);
-        for(int i=0;i<n;i++)
-            cin>>arr[i];
-
-
+        ll xx =n;
+        ll yy = 0;
+        yy = hola(n);
+        ll zz = n-yy;
+        cout<<"Case #"<<ab<<": "<<yy<<" "<<zz<<endl;
     }
-
 }

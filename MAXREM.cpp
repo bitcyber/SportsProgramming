@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
+ Time & Date of creation 12:07:54 07/04/2019  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -27,5 +27,13 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    int n;
+    cin>>n:
+    vi arr(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+
 
 }

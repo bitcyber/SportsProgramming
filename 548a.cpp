@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
+ Time & Date of creation 21:06:01 21/03/2019  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -27,5 +27,19 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    int n;
+    cin>>n;
+    string xx;
+    cin>>xx;
+    // cout<<xx;
+    int count =0;
+    for(int i=0;i<n;i++)
+    {
+        int y = (xx[i] -'0');
+        if(y%2==0)
+            count++;
+
+    }
+    cout<<count;
 
 }

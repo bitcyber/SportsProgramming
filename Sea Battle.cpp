@@ -1,6 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
- Author : Amit Kumar
+ Time & Date of creation 21:22:43 25/02/2019  
  Copyright © amit2rockon. All rights reserved. 
 */
 #include<bits/stdc++.h>
@@ -27,5 +26,10 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    ll a,b,c,d;
+    cin>>a>>b>>c>>d;
+
+    ll ans =  (2*(b+d)+2*a+4);
+    cout<<ans<<endl;
 
 }

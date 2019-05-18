@@ -1,6 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
- Author : Amit Kumar
+ Time & Date of creation 22:21:39 25/02/2019  
  Copyright © amit2rockon. All rights reserved. 
 */
 #include<bits/stdc++.h>
@@ -27,5 +26,48 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+
+    int n;
+    cin>>n;
+
+    vi arr(n);
+
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    sort(arr.begin(),arr.end());
+
+
+if(n>3){
+    for(int i=0;i<n;i+=2)
+    {
+        cout<<arr[i]<<" ";
+    }
+
+    int j;
+
+
+
+    if(n%2==0)
+    {
+         j= n-1;
+    }
+    else
+         j = n-2;
+
+    for(;j>0;j-=2)
+    {
+        cout<<arr[j]<<" ";
+    }
+}
+else
+{
+    for(int i=0;i<n;i+=1)
+    {
+        cout<<arr[i]<<" ";
+    }
+
+}
 
 }

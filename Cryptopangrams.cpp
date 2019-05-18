@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
+ Time & Date of creation 21:44:22 06/04/2019  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -27,5 +27,6 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    
 
 }

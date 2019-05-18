@@ -1,5 +1,5 @@
 /*
- Time & Date of creation 21:44:02 06/04/2019  
+ Time & Date of creation 19:47:11 13/04/2019  
  Author : Amit Kumar
  Copyright © amit2rockon. All rights reserved. 
 */
@@ -27,5 +27,27 @@ typedef vector<vii> vvii;
 int main()
 {
     fast_IO;
+    int n,t;
+    cin>>n>>t;
 
+    vi arr(n),brr(n);
+    for (int i=0;i<n;i++)
+    {
+        cin>>arr[i]>>brr[i];
+    }
+
+    for(int i=0;i<n-1;i++)
+    {
+        if(arr[i]>=t)
+        {
+            cout<<i+1<<endl;
+            return 0;
+        }
+        else if(arr[i]+brr[i]<arr[i+1])
+        {
+            cout<<i+1<<endl;
+            return 0;
+        }
+    }
+    cout<<n<<endl;
 }
